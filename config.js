@@ -9,7 +9,7 @@ const criteria = {
 
 
 const config = {
-    $meta: 'This file configures the api.',
+    $meta: 'This file configures the search api.',
     projectName: 'search-api',
     port: {
         api: {
