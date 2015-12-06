@@ -14,7 +14,7 @@ const config = {
     port: {
         api: {
             $filter: 'env',
-            test: 9090,
+            test: 8080,
             $default: 80
         }
     }
