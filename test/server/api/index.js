@@ -45,7 +45,7 @@ lab.experiment('Index Plugin', () => {
 
         server.inject(request, (response) => {
 
-            Code.expect(response.result.message).to.match(/Search API is accepting connections/i);
+            Code.expect(response.result.message).to.match(/Search API is accepting connections./i);
             Code.expect(response.statusCode).to.equal(200);
 
             done();
