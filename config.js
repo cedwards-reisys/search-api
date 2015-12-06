@@ -9,13 +9,13 @@ const criteria = {
 
 
 const config = {
-    $meta: 'This file configures the plot device.',
+    $meta: 'This file configures the api.',
     projectName: 'search-api',
     port: {
         api: {
             $filter: 'env',
             test: 9090,
-            $default: 8080
+            $default: 80
         }
     }
 };

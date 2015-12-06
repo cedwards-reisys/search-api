@@ -11,6 +11,6 @@ Composer((err, server) => {
 
     server.start(() => {
 
-        console.log('Started the plot device on port ' + server.info.port);
+        console.log('Started the search api on port ' + server.info.port);
     });
 });

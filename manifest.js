@@ -10,7 +10,7 @@ const criteria = {
 
 
 const manifest = {
-    $meta: 'This file defines the plot device.',
+    $meta: 'This file defines the search api.',
     server: {
         debug: {
             request: ['error']
