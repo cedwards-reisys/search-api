@@ -17,14 +17,14 @@ const manifest = {
         },
         connections: {
             routes: {
-                security: true
+                security: true,
+                cors: true
             }
         }
     },
     connections: [{
         port: Config.get('/port/api'),
-        labels: ['api'],
-        cors: true
+        labels: ['api']
     }],
     plugins: {
         './server/api/index': {}
