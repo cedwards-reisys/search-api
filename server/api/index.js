@@ -23,11 +23,11 @@ exports.register = function (server, options, next) {
             var params = request.query;
             params.source = request.params.source;
 
-            reply(
-                {
-                    sql: SqlHelper.getString(params)
-                }
-            );
+            Wreck.get('http://127.0.0.1:9200/_sql?sql='+SqlHelper.getString(params), function (err, res, payload) {
+
+                reply(err,payload.toString()).type('application/json');
+
+            });
         }
     });
 
