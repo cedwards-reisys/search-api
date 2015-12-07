@@ -18,15 +18,11 @@ exports.register = function (server, options, next) {
     server.route({
         method: 'GET',
         path: '/search/{source}',
-        handler: function (request, reply) {
-
-            var params = request.query;
+        handler: (request, reply) => {
+            let params = request.query;
             params.source = request.params.source;
-
-            Wreck.get('http://127.0.0.1:9200/_sql?sql='+SqlHelper.getString(params), function (err, res, payload) {
-
+            Wreck.get('http://127.0.0.1:9200/_sql?sql=' + SqlHelper.getString(params), (err, res, payload) => {
                 reply(err,payload.toString()).type('application/json');
-
             });
         }
     });
@@ -34,17 +30,9 @@ exports.register = function (server, options, next) {
     server.route({
         method: 'GET',
         path: '/sql',
-        config: {
-
-        },
-        handler: function (request, reply) {
-
-            var params = request.query;
-
-            Wreck.get('http://127.0.0.1:9200/_sql?sql='+params['q'], function (err, res, payload) {
-
+        handler: (request, reply) => {
+            Wreck.get('http://127.0.0.1:9200/_sql?sql=' + request.query.q, (err, res, payload) => {
                 reply(err,payload.toString()).type('application/json');
-
             });
         }
     });
