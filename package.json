@@ -25,7 +25,8 @@
     "confidence": "^1.x.x",
     "glue": "^2.x.x",
     "hapi": "^11.x.x",
-    "hoek": "^3.x.x"
+    "hoek": "^3.x.x",
+    "wreck": "^7.0.0"
   },
   "devDependencies": {
     "code": "^2.x.x",
