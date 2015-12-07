@@ -17,11 +17,6 @@ const config = {
             test: 8080,
             $default: 80
         }
-    },
-    connections: {
-        routes: {
-            cors: true
-        }
     }
 };
 

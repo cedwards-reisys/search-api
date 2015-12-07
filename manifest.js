@@ -23,7 +23,8 @@ const manifest = {
     },
     connections: [{
         port: Config.get('/port/api'),
-        labels: ['api']
+        labels: ['api'],
+        cors: true
     }],
     plugins: {
         './server/api/index': {}
