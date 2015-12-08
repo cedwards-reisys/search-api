@@ -3,6 +3,7 @@
 const SqlHandler = require('../../lib/api/sql');
 const Wreck = require('wreck');
 const ResultHandler = require('../../lib/api/result');
+const _ = require('lodash');
 
 
 exports.register = function (server, options, next) {
@@ -35,7 +36,10 @@ exports.register = function (server, options, next) {
                     let csv = [];
                     let recordCount = body.length;
                     for ( let i = 0; i < recordCount; i++ ) {
-                        csv.push(body[i].join(','));
+                        if ( i == 0 ) {
+                            csv.push(_.keys(body[i]).join(',')); // header
+                        }
+                        csv.push(_.values(body[i]).join(','));
                     }
                     result = csv.join("\n");
                 } else {
