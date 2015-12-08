@@ -26,6 +26,7 @@
     "glue": "^2.x.x",
     "hapi": "^11.x.x",
     "hoek": "^3.x.x",
+    "lodash": "^3.10.1",
     "wreck": "^7.0.0"
   },
   "devDependencies": {
